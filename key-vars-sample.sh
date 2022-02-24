@@ -55,11 +55,13 @@ SS_LANGUAGE="de_DE" # must be a valid wordpress language format - en_US, de_DE c
 # note that elementor does NOT work with slickstack staging! 
 # for this and also pure performance i highly recommend to NOT use astra and elementor!
 # you can still use astra starter sites with kadence theme and gutenberg
-# "kadence" with Kadence Blocks or "astra" with elementor
+# "kadence" with Kadence Blocks or "false" to keep default theme
 
-INSTALL_THEME="kadence" # set to false to disable
+INSTALL_THEME="kadence"
 
 # when installing plugins, make sure you check the blacklist!
+# all default plugins in here are already excluded in my custom blacklist (see ss-config-sample)
+# fork it and edit to your needs
 # list plugins with spaces one after another like "plugin1 plugin2 plugin3"
 # copy the exact spelling from the link: https://wordpress.org/plugins/PLUGIN-NAME-HERE/
 # for premium Plugins you have to upload them manually after install

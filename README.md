@@ -12,7 +12,7 @@ _____
 ### 1 - What do I need to start?
 * Ubuntu 20.04 VPS
 * VSCode and logged in to git - no VSCode? terminal works fine
-* this repo cloned LOCALLY on your PC!
+* this repo forked and cloned LOCALLY on your PC!
 * DO NOT fill in your API keys publicly in GitHub Web !!!
 * a working VPS
 * the VPS login user MUST be exactly "root"
@@ -21,6 +21,7 @@ _____
 * make sure DNS is set up with Cloudflare according to SlickStack requirements - SSL to full
 * get "Account" API Key in Cloudflare
 * leave Cloudflare VARs empty if you don't want to use CF
+* check installation-checklist.md for DNS settings
 
 ### 2 - input your data in key-vars.sh file
 * open repo in vscode
@@ -33,7 +34,7 @@ _____
 * enter password some times if no ssh key set
 * get a coffee and let it finish - might take up to 15 min
 * check output for errors
-* if you set no ssh key the script will ask for NEW USER password 2x at the end - scroll up to colorful info screen
+* if you set no ssh key the script will ask for NEW USER password 2x at the end - scroll up to colorful log section of ss-install
 * check if config file was saved to your PC correctly
 * wait for reboot to finish
 * finish WP setup on your new website
@@ -59,6 +60,8 @@ _____
 # ATTENTION
 
 * Translation in slickstack only works for few select languages!
-* you need to install your shop and make first setup in english/german no matter what!
-* and you need to keep the site slugs english/german, like they are created by stock wp/woo
+* you MUST install your shop and make first setup in english/german no matter what!
+* you MUST keep the site slugs english/german, like they are created by stock wp/woo
 * install woocommerce in english/german or cart pages will be cached!
+* if you set any other language than officially supported, it WILL break your site!
+* supported languages can change over time, check slickstack official repo
