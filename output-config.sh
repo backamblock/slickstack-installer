@@ -1,0 +1,45 @@
+#!/bin/bash
+
+## source ss-functions ##
+source /tmp/key-vars.sh
+source /var/www/ss-config
+source /var/www/ss-functions
+
+#output data
+echo -e "###########################################################################"
+echo -e "#################### Congrats! Here are your settings #####################"
+echo -e "###########################################################################"
+echo -e ""
+echo -e "###### Server Settings ######"
+echo -e "IPv4: $SYSTEM_IPV4_ADDRESS"
+echo -e "IPv6: $SYSTEM_IPV6_ADDRESS"
+echo -e "Sudo user: $SUDO_USER"
+echo -e "Sudo password: $SUDO_PASSWORD"
+echo -e "SFTP user: $SFTP_USER"
+echo -e "SFTP password: $SFTP_PASSWORD"
+echo -e "SSH/SFTP port: $SSH_PORT"
+echo -e "CloudFlare API key: $CLOUDFLARE_API_KEY"
+echo -e "CloudFlare API email: $CLOUDFLARE_API_EMAIL"
+echo -e ""
+echo -e "###### Database Settings ######"
+echo -e "DB domain: https://$SITE_DOMAIN/adminer"
+echo -e "DB name: $DB_NAME"
+echo -e "DB user: $DB_USER"
+echo -e "DB user password: $DB_PASSWORD"
+echo -e "DB admin user: admin@127.0.0.1"
+echo -e "DB admin user password: $DB_PASSWORD_ROOT"
+echo -e "DB host: $DB_HOST"
+echo -e "DB prefix: $DB_PREFIX"
+echo -e ""
+echo -e "###### Wordpress Settings ######"
+echo -e "WP Site domain: https://$SITE_DOMAIN"
+echo -e "WP Admin Login: https://$SITE_DOMAIN/wp-admin"
+echo -e "WP Admin user: $WP_ADMIN_USER"
+echo -e "WP Admin password: $WP_ADMIN_PASSWORD"
+echo -e "WP Admin email: $WP_ADMIN_EMAIL"
+echo -e ""
+echo -e "Staging site: $STAGING_SITE"
+echo -e "Staging site link: https://staging.$SITE_DOMAIN"
+echo -e "Staging site protection: $STAGING_SITE_PROTECT"
+echo -e "Staging guest user: $GUEST_USER"
+echo -e "Staging guest password: $GUEST_PASSWORD"
