@@ -4,6 +4,7 @@
 ## input the link to your config file for installing all of your custom settings
 ## you can NOT leave this empty, you HAVE TO use a custom config file or keep the default value (my config)
 ## i will keep my ss-config-sample updated. feel free to notify me about a pending update
+## you should be able to use the newest slickstack official config as well, but you need to check for changes
 ##
 ## make sure to use the "raw" file of github
 ## make sure to have the latest slickstack changes in your config file to prevent errors
