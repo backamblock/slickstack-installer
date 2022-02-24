@@ -21,7 +21,7 @@
 ## run ss-update-config if outdated (check the public mirror link for current build) ##
 ## or copy mirror boilerplate to /var/www/ss-config and customize settings ##
 
-SS_BUILD="FEB2022D"
+SS_BUILD="FEB2022P"
 
 ####################################################################################################
 #### SS-Config: User Settings (Root + Sudo + SFTP) #################################################
@@ -329,7 +329,9 @@ WP_ALLOW_UNFILTERED_UPLOADS="true"
 ## default Nginx settings assume that CloudFlare is in front of your origin VPS server ##
 ## this means that most settings are very liberal to allow for traffic scaling ##
 
-# NGINX_ACCESS_LOG
+## NGINX_ACCESS_LOG = [false|true] only enable for brief testing otherwise disable ##
+
+NGINX_ACCESS_LOG="false"
 
 ## NGINX_HEADER_POWERED_BY = [SlickStack|etc] keep this or change to your super cool name ##
 ## NGINX_HEADER_STRICT_TRANSPORT_SECURITY = [max-age=15552000] only for experts ##
@@ -440,6 +442,8 @@ FCGI_TEMP_FILE_WRITE_SIZE="256k"
 ## SQL_NET_WRITE_TIMEOUT = [30|60|3600|etc] usually this should be fine at 60 seconds ##
 
 SQL_MODE="STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION"
+# SQL_MODE="STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION,ALLOW_INVALID_DATES" better if works?
+
 SQL_MAX_ALLOWED_PACKET="1GB"
 SQL_CONNECT_TIMEOUT="60"
 SQL_WAIT_TIMEOUT="3600"
@@ -768,14 +772,14 @@ MU_PLUGIN_03_DIR="delete-expired-transients"
 MU_PLUGIN_04_SOURCE="https://github.com/littlebizzy/slickstack/raw/master/modules/wordpress/mu-plugins/disable-attachment-pages.zip"
 MU_PLUGIN_04_DIR="disable-attachment-pages"
 
-MU_PLUGIN_05_SOURCE="https://github.com/littlebizzy/slickstack/raw/master/modules/wordpress/mu-plugins/disable-embeds.zip"
-MU_PLUGIN_05_DIR="disable-embeds"
+MU_PLUGIN_05_SOURCE="https://github.com/littlebizzy/slickstack/raw/master/modules/wordpress/mu-plugins/disable-emojis.zip"
+MU_PLUGIN_05_DIR="disable-emojis"
 
-MU_PLUGIN_06_SOURCE="https://github.com/littlebizzy/slickstack/raw/master/modules/wordpress/mu-plugins/disable-emojis.zip"
-MU_PLUGIN_06_DIR="disable-emojis"
+MU_PLUGIN_06_SOURCE="https://github.com/littlebizzy/slickstack/raw/master/modules/wordpress/mu-plugins/disable-empty-trash.zip"
+MU_PLUGIN_06_DIR="disable-empty-trash"
 
-MU_PLUGIN_07_SOURCE="https://github.com/littlebizzy/slickstack/raw/master/modules/wordpress/mu-plugins/disable-empty-trash.zip"
-MU_PLUGIN_07_DIR="disable-empty-trash"
+MU_PLUGIN_07_SOURCE=""
+MU_PLUGIN_07_DIR=""
 
 MU_PLUGIN_08_SOURCE="https://github.com/littlebizzy/slickstack/raw/master/modules/wordpress/mu-plugins/disable-post-via-email.zip"
 MU_PLUGIN_08_DIR="disable-post-via-email"
