@@ -70,7 +70,7 @@ INSTALL_PLUGINS="true"
 BASIC_PLUGINS="webp-express imagemagick-engine autodescription code-snippets loco-translate easy-wp-smtp"
 
 INSTALL_WOOCOMMERCE="true"
-WOOCOMMERCE_PLUGINS="woocommerce woocommerce-germanized woo-stripe-payment" # list them with spaces one after another
+WOOCOMMERCE_PLUGINS="woocommerce woocommerce-germanized woo-stripe-payment"
 
 # installs some fixes to make slickstack work with wp-rocket or other caching plugins
 # does NOT install wp-rocket !
