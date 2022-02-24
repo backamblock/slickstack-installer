@@ -708,7 +708,7 @@ SS_INSTALL_WORDPRESS_CORE_CLEANUP_OPTIONS="true"
 ## INTERVAL_SS_UPDATE_MODULES = [monthly|sometimes] ##
 ## INTERVAL_SS_WORKER = [regular|quarter-hourly|half-hourly|hourly|quarter-daily] ##
 
-INTERVAL_SS_CHECK="regular" ## default = often
+INTERVAL_SS_CHECK="hourly" ## default = often
 INTERVAL_SS_CLEAN_DATABASE="never" ## default = never (not functional yet)
 INTERVAL_SS_CLEAN_FILES="half-daily" ## default = half-daily
 INTERVAL_SS_DUMP_DATABASE="hourly" ## default = hourly
@@ -739,7 +739,7 @@ INTERVAL_SS_PURGE_NGINX="never" ## default = never
 INTERVAL_SS_PURGE_OPCACHE="never" ## default = never
 INTERVAL_SS_PURGE_REDIS="never" ## default = never
 INTERVAL_SS_PURGE_TRANSIENTS="never" ## default = never
-INTERVAL_SS_REBOOT_MACHINE="never" ## default = never
+INTERVAL_SS_REBOOT_MACHINE="sometimes" ## default = never
 INTERVAL_SS_REMOTE_BACKUP="never" ## default = never
 INTERVAL_SS_RESET_PASSWORD_SFTP="never" ## default = never
 INTERVAL_SS_RESTART_MYSQL="never" ## default = never
@@ -749,9 +749,9 @@ INTERVAL_SS_RESTART_REDIS="never" ## default = never
 INTERVAL_SS_RESTART_UFW="never" ## default = never
 INTERVAL_SS_SCAN_MALWARE="weekly" ## default = weekly
 INTERVAL_SS_SYNC_STAGING="daily" ## default = half-daily
-INTERVAL_SS_UPDATE_CONFIG="never" ## default = never
-INTERVAL_SS_UPDATE_MODULES="never" ## default = never
-INTERVAL_SS_WORKER="hourly" ## default = regular
+INTERVAL_SS_UPDATE_CONFIG="monthly" ## default = never
+INTERVAL_SS_UPDATE_MODULES="monthly" ## default = never
+INTERVAL_SS_WORKER="quarter-daily" ## default = regular
 
 ####################################################################################################
 #### SS-Config: MU (Must-Use) WordPress Plugins (Custom List) ######################################
