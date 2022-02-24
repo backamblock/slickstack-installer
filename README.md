@@ -22,6 +22,7 @@ _____
 * get "Account" API Key in Cloudflare
 * leave Cloudflare VARs empty if you don't want to use CF
 * check installation-checklist.md for DNS settings
+* please check the included ss-config-sample.txt if it fits your needs! if you need changes, just fork the repo
 
 ### 2 - input your data in key-vars.sh file
 * open repo in vscode
