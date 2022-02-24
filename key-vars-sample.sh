@@ -15,13 +15,13 @@
 ## WARNING: you should set SS_CLEAN_FILES_WORDPRESS_PLUGINS and SS_CLEAN_FILES_WORDPRESS_CONTENT false!
 ## otherwise slickstack deletes wp-rocket and other plugins you install even if you allow in the blacklist
 
-MY_SS_CONFIG="https://raw.githubusercontent.com/backamblock/slickstack-littlebizzy-fork/speed-and-power/bash/ss-config-sample.txt"
+MY_SS_CONFIG="https://raw.githubusercontent.com/backamblock/slickstack-installer/main/ss-config-sample.txt"
 
 # if you want to use a pilot file, you can specify the link here
 # the pilot file will have more features in the future
 # stay updated by following the official littlebizzy/slickstack repo
 
-SS_PILOT_FILE=""
+SS_PILOT_FILE="https://raw.githubusercontent.com/backamblock/slickstack-installer/main/ss-config-sample.txt"
 
 
 
@@ -85,7 +85,8 @@ CLOUDFLARE_API_EMAIL="mail@gdomain.tld"
 
 
 #########################################################
-## SSH Public Key - NEEDED! WILL NOT WORK WITHOUT IT!!
+## SSH Public Key - Recommended to fill.
+## works without it but will ask for Password some times
 ## paste content of keyfile id_rsa.pub
 
 MY_ID_RSA_PUB="ssh-rsa XXXXX........XXXXX.local"

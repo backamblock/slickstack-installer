@@ -19,33 +19,6 @@ function apt-get {
 
 
 
-
-
-
-
-read -p "STOP!! THE CONFIG FILE LINK NEEDS TO BE UPDATED!!! CTRL + C to cancel... " -n1 -s
-read -p "STOP!! THE CONFIG FILE LINK NEEDS TO BE UPDATED!!! CTRL + C to cancel... " -n1 -s
-read -p "STOP!! THE CONFIG FILE LINK NEEDS TO BE UPDATED!!! CTRL + C to cancel... " -n1 -s
-read -p "STOP!! THE CONFIG FILE LINK NEEDS TO BE UPDATED!!! CTRL + C to cancel... " -n1 -s
-read -p "STOP!! THE CONFIG FILE LINK NEEDS TO BE UPDATED!!! CTRL + C to cancel... " -n1 -s
-read -p "STOP!! THE CONFIG FILE LINK NEEDS TO BE UPDATED!!! CTRL + C to cancel... " -n1 -s
-read -p "STOP!! THE CONFIG FILE LINK NEEDS TO BE UPDATED!!! CTRL + C to cancel... " -n1 -s
-read -p "STOP!! THE CONFIG FILE LINK NEEDS TO BE UPDATED!!! CTRL + C to cancel... " -n1 -s
-read -p "STOP!! THE CONFIG FILE LINK NEEDS TO BE UPDATED!!! CTRL + C to cancel... " -n1 -s
-read -p "STOP!! THE CONFIG FILE LINK NEEDS TO BE UPDATED!!! CTRL + C to cancel... " -n1 -s
-read -p "STOP!! THE CONFIG FILE LINK NEEDS TO BE UPDATED!!! CTRL + C to cancel... " -n1 -s
-read -p "STOP!! THE CONFIG FILE LINK NEEDS TO BE UPDATED!!! CTRL + C to cancel... " -n1 -s
-read -p "STOP!! THE CONFIG FILE LINK NEEDS TO BE UPDATED!!! CTRL + C to cancel... " -n1 -s
-read -p "STOP!! THE CONFIG FILE LINK NEEDS TO BE UPDATED!!! CTRL + C to cancel... " -n1 -s
-
-
-
-
-
-
-
-
-
 ##################################################################
 ##  1. update, upgrade, clean
 
@@ -328,6 +301,7 @@ WP_CRON="sed -i \"s|.*mainwp.*|echo notDeleteMain-wp|g\" /var/www/ss-clean-files
 sed -i "s;## ADD CODE HERE ##;## ADD CODE HERE ##\n$WP_CRON;" /var/www/crons/custom/01-cron-often-custom
 
 # let cron half daily run cron 2 minutes so ss-clean-files does not get updated before it runs
+# do NOT change "ss-clean-files" interval other than "half-daily"
 WP_CRON="bash /var/www/crons/custom/01-cron-often-custom"
 sed -i "s;## ADD CODE HERE ##;## ADD CODE HERE ##\n$WP_CRON;" /var/www/crons/custom/07-cron-half-daily-custom
 
@@ -374,7 +348,7 @@ if [ "$INSTALL_WP_ROCKET" == "true" ]; then
     ## staging
     # enable WP_CACHE for WP Rocket
     sed -i "s|define('WP_CACHE', false)|define('WP_CACHE', true)|g" /var/www/html/staging/wp-config.php
-    # create 12h crons to self-heal in case of ss-update
+    # create cron to self-heal in case of ss-update
     # set wp cache = true
     WP_CRON="sed -i \"s|define('WP_CACHE', false)|define('WP_CACHE', true)|g\" /var/www/html/staging/wp-config.php"
     sed -i "s;## ADD CODE HERE ##;## ADD CODE HERE ##\n$WP_CRON;" /var/www/crons/custom/01-cron-often-custom
@@ -393,7 +367,7 @@ if [ "$INSTALL_WOOCOMMERCE" == "true" ]; then
 fi
 
 # define encryption key for woocommerce germanized
-# we do this here as a user may later add this and it does not impact performance
+# we do this here as a user may later need this and it does not impact performance
 NEW_WC_GZD_ENCRYPTION_KEY="$(openssl rand -hex 64 | cut -c1-64)"
 sed -i "s|// include ss-constants.php|define( 'WC_GZD_ENCRYPTION_KEY', '${NEW_WC_GZD_ENCRYPTION_KEY}' );|g" /var/www/html/wp-config.php
 
@@ -406,7 +380,7 @@ sed -i "s+## ADD CODE HERE ##+## ADD CODE HERE ##\n$WP_CRON+" /var/www/crons/cus
 WP_CRON="sed -i \"s|// include ss-constants.php|define( 'WC_GZD_ENCRYPTION_KEY', '${NEW_WC_GZD_ENCRYPTION_KEY}' );|g\" /var/www/html/staging/wp-config.php"
 sed -i "s+## ADD CODE HERE ##+## ADD CODE HERE ##\n$WP_CRON+" /var/www/crons/custom/01-cron-often-custom
 
-# enable wp debug, log and display errors
+# enable wp debug, log and display errors for staging
 # create cron to self-heal in case of ss-update
 WP_CRON="sed -i \"s|define('WP_DEBUG', false)|define('WP_DEBUG', true)|g\" /var/www/html/staging/wp-config.php"
 sed -i "s;## ADD CODE HERE ##;## ADD CODE HERE ##\n$WP_CRON;" /var/www/crons/custom/01-cron-often-custom
