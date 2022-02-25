@@ -1,5 +1,4 @@
 # Installation Checklist
-VPS: Cloudflare + Netcup
 -----
 ## Prerequisites
 * get Domain
