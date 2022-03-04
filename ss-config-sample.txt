@@ -289,7 +289,7 @@ CSR_DEPT="DevOps"
 ## WP_CRON_METHOD = [wordpress|server] server means ss core cron jobs will manage it ##
 ## WP_CRON_INTERVAL = [regular|quarter-hourly|half-hourly|hourly|quarter-daily|half-daily] ##
 
-WP_CRON_METHOD="server"
+WP_CRON_METHOD="wordpress"
 WP_CRON_INTERVAL="regular"
 
 ## Multisite setups should not be used for high-traffic or business-critical websites ##

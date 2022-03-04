@@ -394,6 +394,9 @@ sed -i "s;## ADD CODE HERE ##;## ADD CODE HERE ##\n$WP_CRON;" /var/www/crons/cus
 ################
 ##  8.7 FINISH
 
+# enable cron to call wp-cron every 5 minutes
+WP_CRON="wget -q -O - https://${SITE_DOMAIN}/wp-cron.php?doing_wp_cron >/dev/null"
+sed -i "s;## ADD CODE HERE ##;## ADD CODE HERE ##\n$WP_CRON;" /var/www/crons/custom/02-cron-regular-custom
 
 # install WP Language
 echo -e "${DARKGREEN}Switch WP Language to ${SS_LANGUAGE} ${NOCOLOR}"
